@@ -19,8 +19,8 @@ public class PatientService {
         return patientRepository.findAll();
     }
 
-    public List<Patient> getPatientsByDoctor(Long doctorId){
-        return patientRepository.findByDoctorId(doctorId);
+    public List<Patient> getPatientsByDoctorIdAndClinicId( Long doctorId, Long clinicId){
+        return patientRepository.findByDoctorIdAndClinicId(doctorId, clinicId);
     }
 
     public Boolean deletePatientById(Long patientId){
