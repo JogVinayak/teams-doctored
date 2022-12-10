@@ -23,6 +23,9 @@ public class Patient {
     private String name;
     private String phone;
     private Integer age;
-    private String clinicId;
-    private String doctorId;
+    private Long clinicId;
+    private Long doctorId;
 }
+
+
+
