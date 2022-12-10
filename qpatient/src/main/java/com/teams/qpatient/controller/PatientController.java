@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class PatientController {
 
     @Autowired
@@ -22,11 +23,6 @@ public class PatientController {
     public Patient getPatient(@PathVariable Long patientId){
         return patientService.getPatientById( patientId);
     }
-
-/*    @GetMapping("/patient-clinic/{clinicId}")
-    public List<Patient> getPatientListByClinicId(Long clinicId){
-        return patientService.getPatientByClinic(clinicId);
-    }*/
 
     @DeleteMapping("/patient/{patientId}")
     public Boolean deletePatientById(@PathVariable Long patientId) {
