@@ -6,10 +6,11 @@ import com.teams.qpatient.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.Doc;
 import java.util.List;
 
 
-@RequestMapping
+@RestController
 @CrossOrigin(origins = "*")
 public class DoctorController {
 
@@ -24,6 +25,11 @@ public class DoctorController {
     @GetMapping("/doctor/{clinicId}")
     public List<Doctor> getDoctorsByClinicId(@PathVariable Long clinicId){
         return doctorService.getDoctorsByClinicId(clinicId);
+    }
+
+    @PostMapping("/doctor")
+    public Doctor postDoctor(@RequestBody Doctor doctor){
+        return doctorService.saveDoctor(doctor);
     }
 
     @DeleteMapping("/doctor/{doctorId}")

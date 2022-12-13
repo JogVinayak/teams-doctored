@@ -37,4 +37,8 @@ public class DoctorService {
         }
         return true;
     }
+
+    public Doctor saveDoctor(Doctor doctor){
+        return doctorRepository.save(doctor);
+    }
 }
