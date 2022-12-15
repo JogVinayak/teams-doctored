@@ -24,5 +24,5 @@ public class Doctor {
     private String speciality;
     private String grade;
     private String availability;
-    private String clinicId;
+    private Long clinicId;
 }
